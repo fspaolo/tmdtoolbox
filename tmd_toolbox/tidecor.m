@@ -1,5 +1,5 @@
 %
-% Script to run 'tmd_tide_pred.m' in parallel on several HDF5 files.
+% Script for running 'tmd_tide_pred.m' in parallel on several HDF5 files.
 %
 % This script facilitates the use of the Matlab Tide Model Driver (TMD):
 % 
