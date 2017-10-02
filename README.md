@@ -19,9 +19,9 @@ The main script is (see header for documentation):
 
 Download the lasted Tide Model and TMD Matlab toolbox:
 
-    http://www.esr.org/ptm_index.html
-    https://www.esr.org/polar_tide_models/Model_TPXO71.html
+    (TMD) http://www.esr.org/ptm_index.html
+    (Model) https://www.esr.org/polar_tide_models/Model_TPXO71.html
 
 
-Fernando Paolo <fspaolo@gmail.com>
+Fernando Paolo (fspaolo@gmail.com)  
 Oct 12, 2017
