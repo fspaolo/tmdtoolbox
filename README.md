@@ -1,6 +1,6 @@
 ## Modified TMD Toolbox
 
-Modification of the Matlab Tide Model Driver (TMD)[1], for running
+Modification of the Matlab Tide Model Driver (TMD)[1] for running
 'tmd_tide_pred.m' in parallel on several HDF5 files.
 
 [1] https://www.esr.org/research/polar-tide-models/tmd-software/
@@ -10,10 +10,10 @@ Some of the original Matlab scripts have been modified to improve performance.
 Modifications include replacing loops by vectorization, and improving
 the I/O for multiple data files and parallelization.
 
-The modifications were made by Alex Gardner and Fernando Paolo, and they are
-marked in the code.
+The modifications were made by Alex Gardner and Fernando Paolo, and they
+have been marked in the code.
 
-The main script is (see header for how to use it):
+The main script is (see header for documentation):
 
     tmd_toolbox/tidecor.m
 
