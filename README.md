@@ -16,11 +16,17 @@ This wraper runs `tmd_tide_pred.m` in parallel on several HDF5 files.
 * Modifications were made by Alex Gardner and Fernando Paolo, and they
   have been marked in the code.
 
-The main script is (see header for documentation):
+## Usage
+
+* The main script to run is (see header for documentation):
 
     tmd_toolbox/tidecor.m
 
-Download the lasted Tide Model and TMD Matlab toolbox:
+* For optimal performance merge/split input files into N blocks, using:
+
+    merge.py
+
+* For downloading the lasted Tide Model and TMD Matlab toolbox:
 
     (TMD) http://www.esr.org/ptm_index.html
     (Model) https://www.esr.org/polar_tide_models/Model_TPXO71.html
