@@ -22,7 +22,8 @@ The main script to run is (see header for documentation):
 
     tmd_toolbox/tidecor.m 
 
-For optimal performance merge/split input files into N blocks, using:
+For optimal performance merge/split input files into N blocks, whith
+N equal number of cores (even if the files end up fairly large). Use:
 
     merge.py 
     split.py
