@@ -25,6 +25,7 @@ The main script to run is (see header for documentation):
 For optimal performance merge/split input files into N blocks, using:
 
     merge.py 
+    split.py
 
 For downloading the lasted Tide Model and TMD Matlab toolbox:
 
