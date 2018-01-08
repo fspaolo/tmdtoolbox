@@ -10,6 +10,7 @@
 %   - path to tide and load model control files
 %   - names/cols of variables: lon, lat, time, height
 %   - reference epoch for time in seconds
+%   - number of parallel jobs
 % 
 % To run from Terminal:
 %   /path/to/matlab -nodesktop < tidecor.m

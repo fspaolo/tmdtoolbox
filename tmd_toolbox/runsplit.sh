@@ -1,0 +1,12 @@
+python split.py -k 16 /mnt/devon-r0/shared_data/icesat/floating_/ANT_ICE_ISHELF_READ_A_TOPO_IBE.h5 &&
+python split.py -k 16 /mnt/devon-r0/shared_data/icesat/floating_/ANT_ICE_ISHELF_READ_D_TOPO_IBE.h5 &&
+python split.py -k 16 /mnt/devon-r0/shared_data/ers1/floating_/ANT_ER1_ISHELF_READ_A_RM_TOPO_IBE.h5 &&
+python split.py -k 16 /mnt/devon-r0/shared_data/ers1/floating_/ANT_ER1_ISHELF_READ_D_RM_TOPO_IBE.h5 &&
+python split.py -k 16 /mnt/devon-r0/shared_data/ers2/floating_/ANT_ER2_ISHELF_READ_A_RM_TOPO_IBE.h5 &&
+python split.py -k 16 /mnt/devon-r0/shared_data/ers2/floating_/ANT_ER2_ISHELF_READ_D_RM_TOPO_IBE.h5 &&
+python split.py -k 16 /mnt/devon-r0/shared_data/envisat/floating_/ANT_RA2_ISHELF_2002_2010_READ_A_RM_TOPO_IBE.h5 &&
+python split.py -k 16 /mnt/devon-r0/shared_data/envisat/floating_/ANT_RA2_ISHELF_2002_2010_READ_D_RM_TOPO_IBE.h5 &&
+python split.py -k 16 /mnt/devon-r0/shared_data/envisat/floating_/ANT_RA2_ISHELF_2010_2012_READ_A_RM_TOPO_IBE.h5 &&
+python split.py -k 16 /mnt/devon-r0/shared_data/envisat/floating_/ANT_RA2_ISHELF_2010_2012_READ_D_RM_TOPO_IBE.h5 &&
+python split.py -k 16 /mnt/devon-r0/shared_data/cryosat2/floating_/ANT_CS2_ISHELF_READ_A_TOPO_IBE.h5 &&
+python split.py -k 16 /mnt/devon-r0/shared_data/cryosat2/floating_/ANT_CS2_ISHELF_READ_D_TOPO_IBE.h5 &&
