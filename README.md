@@ -31,7 +31,7 @@ To merge/split use (from `captoolbox`):
 
 For downloading the lasted Tide Model and TMD Matlab toolbox:
 
-    (TMD) http://www.esr.org/ptm_index.html  
+    (TMD)   http://www.esr.org/ptm_index.html  
     (Model) https://www.esr.org/polar_tide_models/Model_TPXO71.html
 
 ## Recipe
@@ -45,6 +45,10 @@ Add models:
     cd tmdtoolbox
     mkdir DATA
     # put Model_* and grid_* files into DATA
+
+Edit the header of `tidecor.m`, and run:
+
+    /Applications/Matlab2016b/bin/matlab -nodesktop < tidecor.m
 
 
 Fernando Paolo (fspaolo@gmail.com)  
