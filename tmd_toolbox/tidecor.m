@@ -9,7 +9,7 @@
 %   - path to input HDF5 data file(s)
 %   - path to tide and load model control files
 %   - names/cols of variables: lon, lat, time, height
-%   - reference epoch for time in seconds
+%   - reference epoch for input time in seconds
 %   - number of parallel jobs
 % 
 % To run from Terminal:
@@ -47,10 +47,10 @@ tic;
 %-----------------------------------------------------------
 
 % Path to input data file(s)
-PATH = '/Users/paolofer/data/envisat/floating/merged_*.h5';
+PATH = '/mnt/devon-r0/shared_data/icesat/floating_/*IBE_???.h5';
 
 % Number of parallel jobs
-NJOBS = 4;
+NJOBS = 16;
 
 % Name of variables if HDF5 files
 XVAR = '/lon'; 
@@ -64,8 +64,9 @@ XCOL = 4;
 YCOL = 3;
 TCOL = 2;
 
-% Days from 0000-Jan-1 to the reference epoch (Y, M, D, h, m, s)
-REFTIME = datenum(1, 1, 1);  %NOTE: Double check this!
+% Reference epoch of input time in seconds (Y, M, D, h, m, s)
+% (The above converts given date to number of days since January 0, 0000)
+REFTIME = datenum(1970, 1, 1, 0, 0, 0);
 
 % Path to tide model
 TIDEMODEL = 'DATA/Model_CATS2008a_opt';
@@ -111,7 +112,7 @@ parfor i = 1:length(files)
     %lat = data(:,YCOL);
     %time = data(:,TCOL);
 
-    % Serial date number = number of days from 0000-Jan-1
+    % Serial date number (this is number of days since 0000-Jan-1)
     SDtime = (t/86400.) + REFTIME;    
 
     % Predict tide values using the TMD toolbox
