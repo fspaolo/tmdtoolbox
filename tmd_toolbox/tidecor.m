@@ -34,6 +34,7 @@
 %   * Some original Matlab scripts were modified to improve performance.
 %     These modifications include replacing loops by vectorization, and
 %     improving the I/O for multiple data files.
+%   * Ignore => Warning: Name is nonexistent or not a directory: /FUNCTIONS
 %   * Changes were made by Alex Gardner and Fernando Paolo, and they are
 %     marked in the code.
 % 
