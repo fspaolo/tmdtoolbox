@@ -50,7 +50,7 @@ tic;
 % Path to input data file(s)
 %PATH = '/mnt/devon-r0/shared_data/icesat/floating_/*_A_*_IBE_*.h5';
 %PATH = '/mnt/devon-r0/shared_data/icesat/floating_/*_D_*_IBE_*.h5';
-PATH = '/mnt/devon-r0/shared_data/ers1/floating_/*_A_*_IBE_*.h5';
+%PATH = '/mnt/devon-r0/shared_data/ers1/floating_/*_A_*_IBE_*.h5';
 %PATH = '/mnt/devon-r0/shared_data/ers1/floating_/*_D_*_IBE_*.h5';
 %PATH = '/mnt/devon-r0/shared_data/ers2/floating_/*_A_*_IBE_*.h5';
 %PATH = '/mnt/devon-r0/shared_data/ers2/floating_/*_D_*_IBE_*.h5';
@@ -59,7 +59,7 @@ PATH = '/mnt/devon-r0/shared_data/ers1/floating_/*_A_*_IBE_*.h5';
 %PATH = '/mnt/devon-r0/shared_data/envisat/floating_/*_2010_2012_*_A_*_IBE_*.h5';
 %PATH = '/mnt/devon-r0/shared_data/envisat/floating_/*_2010_2012_*_D_*_IBE_*.h5';
 %PATH = '/mnt/devon-r0/shared_data/cryosat2/floating_/*_A_*_IBE_*.h5';
-%PATH = '/mnt/devon-r0/shared_data/cryosat2/floating_/*_D_*_IBE_*.h5';
+PATH = '/mnt/devon-r0/shared_data/cryosat2/floating_/*_D_*_IBE_*.h5';
 
 % Number of parallel jobs
 NJOBS = 8;
