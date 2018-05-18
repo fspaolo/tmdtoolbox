@@ -50,6 +50,16 @@ Edit the header of `tidecor.m`, and run:
 
     /Applications/Matlab2016b/bin/matlab -nodesktop < tidecor.m
 
+## Notes
+
+The tide and load-tide corrections are applied as:
+
+    h_cor = h - tide - load
+
+or equivalentely, the full tide correction is:
+
+    h_tide = tide + load
+
 
 Fernando Paolo (fspaolo@gmail.com)  
 Oct 12, 2017

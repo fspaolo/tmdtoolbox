@@ -38,6 +38,9 @@
 %   * Changes were made by Alex Gardner and Fernando Paolo, and they are
 %     marked in the code.
 % 
+% Apply Tide and Load corrections:
+%   h_cor = h - tide - load
+%
 % Fernando Paolo <paolofer@jpl.nasa.gov>
 % Jun 29, 2017 
 
@@ -139,7 +142,7 @@ parfor i = 1:length(files)
     z(isnan(z)) = 0;                    
     l(isnan(l)) = 0;
 
-    % Apply correction
+    % Apply corrections
     h_cor = h - (z + l);
 
     % Save data in the same input file
