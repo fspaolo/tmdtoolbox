@@ -61,7 +61,7 @@ NJOBS = 16;
 XVAR = '/lon'; 
 YVAR = '/lat';
 TVAR = '/t_sec';
-ZVAR = '/h_res';
+ZVAR = '/h_cor';
 
 % Reference epoch of input time in seconds (Y, M, D, h, m, s)
 % (The above converts given date to number of days since January 0, 0000)
