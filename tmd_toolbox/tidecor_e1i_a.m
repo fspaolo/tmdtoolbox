@@ -5,17 +5,17 @@
 % 
 %    https://www.esr.org/research/polar-tide-models/tmd-software/
 %
-% To edit in the code:
+% Edit in the code:
 %   - path to input HDF5 data file(s)
 %   - path to tide and load model control files
 %   - names/cols of variables: lon, lat, time, height
 %   - reference epoch for input time in seconds
 %   - number of parallel jobs
 % 
-% To run from Terminal:
+% Run from Terminal:
 %   /path/to/matlab -nodesktop < tidecor.m
 % 
-% To run from Matlab GUI:
+% Run from Matlab GUI:
 %   tidecor
 %
 % Units of input variables:
@@ -38,43 +38,30 @@
 %   * Changes were made by Alex Gardner and Fernando Paolo, and they are
 %     marked in the code.
 % 
+% Apply Tide and Load corrections:
+%   h_cor = h - tide - load
+%
 % Fernando Paolo <paolofer@jpl.nasa.gov>
 % Jun 29, 2017 
 
 clear ALL
 tic;
-%-----------------------------------------------------------
+
+%===========================================================
 % Edit here
-%-----------------------------------------------------------
+%===========================================================
 
 % Path to input data file(s)
-%PATH = '/mnt/devon-r0/shared_data/icesat/floating_/*_A_*_IBE_*.h5';
-%PATH = '/mnt/devon-r0/shared_data/icesat/floating_/*_D_*_IBE_*.h5';
-%PATH = '/mnt/devon-r0/shared_data/ers1/floating_/*_A_*_IBE_*.h5';
-%PATH = '/mnt/devon-r0/shared_data/ers1/floating_/*_D_*_IBE_*.h5';
-%PATH = '/mnt/devon-r0/shared_data/ers2/floating_/*_A_*_IBE_*.h5';
-%PATH = '/mnt/devon-r0/shared_data/ers2/floating_/*_D_*_IBE_*.h5';
-PATH = '/mnt/devon-r0/shared_data/envisat/floating_/*_2002_2010_*_A_*_IBE_*.h5';
-%PATH = '/mnt/devon-r0/shared_data/envisat/floating_/*_2002_2010_*_D_*_IBE_*.h5';
-%PATH = '/mnt/devon-r0/shared_data/envisat/floating_/*_2010_2012_*_A_*_IBE_*.h5';
-%PATH = '/mnt/devon-r0/shared_data/envisat/floating_/*_2010_2012_*_D_*_IBE_*.h5';
-%PATH = '/mnt/devon-r0/shared_data/cryosat2/floating_/*_A_*_IBE_*.h5';
-%PATH = '/mnt/devon-r0/shared_data/cryosat2/floating_/*_D_*_IBE_*.h5';
+PATH = '/mnt/devon-r0/shared_data/ers1/floating_/latest/*_ICE_*_A_*.h5';
 
 % Number of parallel jobs
-NJOBS = 8;
+NJOBS = 16;
 
 % Name of variables if HDF5 files
 XVAR = '/lon'; 
 YVAR = '/lat';
 TVAR = '/t_sec';
 ZVAR = '/h_res';
-
-% DEPRECATED (use HDF5 only)
-% Columns of x/y/t if ASCII files (Matlab uses 1-based indexing!)
-XCOL = 4;
-YCOL = 3;
-TCOL = 2;
 
 % Reference epoch of input time in seconds (Y, M, D, h, m, s)
 % (The above converts given date to number of days since January 0, 0000)
@@ -89,7 +76,7 @@ LOADMODEL = 'DATA/Model_tpxo7.2_load';
 % Path to TMD functions
 addpath('FUNCTIONS')
 
-%-----------------------------------------------------------
+%===========================================================
 
 % Get list of file names (from structure array)
 list = dir(PATH);
@@ -117,13 +104,6 @@ parfor i = 1:length(files)
     t = h5read(infile, TVAR);
     h = h5read(infile, ZVAR);
 
-    %% Loads ASCII file into matrix
-    %data = dlmread(infile);
-
-    %lon = data(:,XCOL);
-    %lat = data(:,YCOL);
-    %time = data(:,TCOL);
-
     % Serial date number (this is number of days since 0000-Jan-1)
     SDtime = (t/86400.) + REFTIME;    
 
@@ -139,7 +119,7 @@ parfor i = 1:length(files)
     z(isnan(z)) = 0;                    
     l(isnan(l)) = 0;
 
-    % Apply correction
+    % Apply corrections
     h_cor = h - (z + l);
 
     % Save data in the same input file
@@ -154,10 +134,6 @@ parfor i = 1:length(files)
     outfile = fullfile(path, strcat(fname, '_TIDE', ext));
     movefile(infile, outfile);
 
-    %[path, fname, ext] = fileparts(infile);
-    %outfile = fullfile(path, strcat(fname, '.tide_matlab'));
-    %dlmwrite(outfile, [lon lat time z' l'], ' ')
-     
     fprintf('Output -> %s\n', outfile);
 
     fclose('all');
