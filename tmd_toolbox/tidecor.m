@@ -90,7 +90,9 @@ TIDEMODEL = 'DATA/Model_CATS2008a_opt';
 LOADMODEL = 'DATA/Model_tpxo7.2_load';
 
 % Path to TMD functions
-addpath('FUNCTIONS')
+addpath('/home/paolofer/code/tmdtoolbox/tmd_toolbox')
+addpath('/home/paolofer/code/tmdtoolbox/tmd_toolbox/DATA')
+addpath('/home/paolofer/code/tmdtoolbox/tmd_toolbox/FUNCTIONS')
 
 %-----------------------------------------------------------
 
