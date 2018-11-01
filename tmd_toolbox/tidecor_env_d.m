@@ -52,10 +52,10 @@ tic;
 %===========================================================
 
 % Path to input data file(s)
-PATH = '/mnt/devon-r0/shared_data/envisat/floating_/latest/*_D_*.h5';
+PATH = '/Users/paolofer/data/envisat/floating/latest/*_D_*.h5';
 
 % Number of parallel jobs
-NJOBS = 16;
+NJOBS = 4;
 
 % Name of variables if HDF5 files
 XVAR = '/lon'; 

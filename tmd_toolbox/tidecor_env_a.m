@@ -41,8 +41,9 @@
 % Apply Tide and Load corrections:
 %   h_cor = h - tide - load
 %
-% Fernando Paolo <paolofer@jpl.nasa.gov>
-% Jun 29, 2017 
+% Author:
+%     Fernando Paolo <paolofer@jpl.nasa.gov>
+%     Jet Propulsion Laboratory / Caltech, Jun 29, 2017 
 
 clear ALL
 tic;
@@ -52,10 +53,10 @@ tic;
 %===========================================================
 
 % Path to input data file(s)
-PATH = '/mnt/devon-r0/shared_data/envisat/floating_/latest/*_A_*.h5';
+PATH = '/Users/paolofer/data/envisat/floating/latest/*_A_*.h5';
 
 % Number of parallel jobs
-NJOBS = 16;
+NJOBS = 4;
 
 % Name of variables if HDF5 files
 XVAR = '/lon'; 
