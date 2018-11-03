@@ -73,7 +73,7 @@ PATHS = {'/mnt/bylot-r2/shared_data/ers1/floating/latest/*_ICE_*_A_*_tile_???.h5
          '/mnt/bylot-r2/shared_data/icesat/floating/latest/*_A_*_tile_???.h5',
          '/mnt/bylot-r2/shared_data/icesat/floating/latest/*_D_*_tile_???.h5',
          '/mnt/bylot-r2/shared_data/cryosat2/floating/latest/*_A_*_tile_???.h5',
-         '/mnt/bylot-r2/shared_data/cryosat2/floating/latest/*_D_*_tile_???.h5'}
+         '/mnt/bylot-r2/shared_data/cryosat2/floating/latest/*_D_*_tile_???.h5'};
 
 %PATHS = {'/Users/paolofer/data/ers1/thwaites/*.h5'};
 
@@ -103,7 +103,7 @@ TIDEMODEL = 'DATA/Model_CATS2008a_opt';
 LOADMODEL = 'DATA/Model_tpxo7.2_load';
 
 % Path to TMD functions
-addpath(genpath('.'));
+addpath(genpath('FUNCTIONS'));
 
 %================================================================
 
