@@ -84,7 +84,7 @@ NJOBS = 16;
 XVAR = '/lon'; 
 YVAR = '/lat';
 TVAR = '/t_sec';
-ZVAR = '/h_res';
+ZVAR = '/h_cor';
 
 % DEPRECATED (use HDF5 only)
 % Columns of x/y/t if ASCII files (Matlab uses 1-based indexing!)
@@ -121,7 +121,6 @@ if isempty(pool)
     parpool(NJOBS);
 end
 
-files
 % Process files in parallel (parallel for loop)
 parfor i = 1:length(files)
 
