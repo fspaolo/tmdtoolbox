@@ -60,20 +60,20 @@ tic;
 %================================================================
 
 % List of paths to input files. Ex: {'/path/one/*.h5', '/path/two/*.h5'}
-PATHS = {'/mnt/bylot-r2/shared_data/ers1/floating/latest/*_ICE_*_A_*_tile_???.h5',
-         '/mnt/bylot-r2/shared_data/ers1/floating/latest/*_ICE_*_D_*_tile_???.h5',
-         '/mnt/bylot-r2/shared_data/ers1/floating/latest/*_OCN_*_A_*_tile_???.h5',
-         '/mnt/bylot-r2/shared_data/ers1/floating/latest/*_OCN_*_D_*_tile_???.h5',
-         '/mnt/bylot-r2/shared_data/ers2/floating/latest/*_ICE_*_A_*_tile_???.h5',
-         '/mnt/bylot-r2/shared_data/ers2/floating/latest/*_ICE_*_D_*_tile_???.h5',
-         '/mnt/bylot-r2/shared_data/ers2/floating/latest/*_OCN_*_A_*_tile_???.h5',
-         '/mnt/bylot-r2/shared_data/ers2/floating/latest/*_OCN_*_D_*_tile_???.h5',
-         '/mnt/bylot-r2/shared_data/envisat/floating/latest/*_A_*_tile_???.h5',
-         '/mnt/bylot-r2/shared_data/envisat/floating/latest/*_D_*_tile_???.h5',
-         '/mnt/bylot-r2/shared_data/icesat/floating/latest/*_A_*_tile_???.h5',
-         '/mnt/bylot-r2/shared_data/icesat/floating/latest/*_D_*_tile_???.h5',
-         '/mnt/bylot-r2/shared_data/cryosat2/floating/latest/*_A_*_tile_???.h5',
-         '/mnt/bylot-r2/shared_data/cryosat2/floating/latest/*_D_*_tile_???.h5'};
+PATHS = {'/mnt/bylot-r2/shared_data/ers1/floating/latest/*_ICE_*_A_*_tile_*.h5',
+         '/mnt/bylot-r2/shared_data/ers1/floating/latest/*_ICE_*_D_*_tile_*.h5',
+         '/mnt/bylot-r2/shared_data/ers1/floating/latest/*_OCN_*_A_*_tile_*.h5',
+         '/mnt/bylot-r2/shared_data/ers1/floating/latest/*_OCN_*_D_*_tile_*.h5',
+         '/mnt/bylot-r2/shared_data/ers2/floating/latest/*_ICE_*_A_*_tile_*.h5',
+         '/mnt/bylot-r2/shared_data/ers2/floating/latest/*_ICE_*_D_*_tile_*.h5',
+         '/mnt/bylot-r2/shared_data/ers2/floating/latest/*_OCN_*_A_*_tile_*.h5',
+         '/mnt/bylot-r2/shared_data/ers2/floating/latest/*_OCN_*_D_*_tile_*.h5',
+         '/mnt/bylot-r2/shared_data/envisat/floating/latest/*_A_*_tile_*.h5',
+         '/mnt/bylot-r2/shared_data/envisat/floating/latest/*_D_*_tile_*.h5',
+         '/mnt/bylot-r2/shared_data/icesat/floating/latest/*_A_*_tile_*.h5',
+         '/mnt/bylot-r2/shared_data/icesat/floating/latest/*_D_*_tile_*.h5',
+         '/mnt/bylot-r2/shared_data/cryosat2/floating/latest/*_A_*_tile_*.h5',
+         '/mnt/bylot-r2/shared_data/cryosat2/floating/latest/*_D_*_tile_*.h5'};
 
 %PATHS = {'/Users/paolofer/data/ers1/thwaites/*.h5'};
 
@@ -110,8 +110,10 @@ addpath(genpath('FUNCTIONS'));
 % Get list of files per path and concatenate all file names
 files = {};
 for i = 1:length(PATHS)
+    disp(PATHS{i})
     d = dir(PATHS{i});
     ifiles = strcat({d.folder}, '/', {d.name});  % list of file names (full paths)
+    ifiles
     files = cat(2, files, ifiles);
 end
 
@@ -121,6 +123,7 @@ if isempty(pool)
     parpool(NJOBS);
 end
 
+files
 % Process files in parallel (parallel for loop)
 parfor i = 1:length(files)
 
