@@ -1,4 +1,5 @@
 rsync.sh
+tidecor_*
 DATA/
 OUT/
 old/
