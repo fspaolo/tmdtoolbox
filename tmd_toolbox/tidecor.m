@@ -110,10 +110,8 @@ addpath(genpath('FUNCTIONS'));
 % Get list of files per path and concatenate all file names
 files = {};
 for i = 1:length(PATHS)
-    disp(PATHS{i})
     d = dir(PATHS{i});
     ifiles = strcat({d.folder}, '/', {d.name});  % list of file names (full paths)
-    ifiles
     files = cat(2, files, ifiles);
 end
 
