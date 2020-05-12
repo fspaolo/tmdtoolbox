@@ -4,6 +4,8 @@ This is a modification of the Matlab Tide Model Driver (TMD):
 
 https://www.esr.org/research/polar-tide-models/tmd-software/
 
+Originaly developed by [Laurie Padman](https://www.esr.org/staff/laurence-padman/)
+
 This wraper runs `tmd_tide_pred.m` in parallel on several HDF5 files.
 
 ## Notes
