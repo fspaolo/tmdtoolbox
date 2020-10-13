@@ -26,7 +26,7 @@ The main script to run is (see header for documentation):
 
 For optimal performance, merge/split the input files into N blocks, whith
 N equal number of cores (even if the files end up fairly large).
-To merge/split use (from `captoolbox`):
+To merge/split use (from [`captoolkit`](https://github.com/fspaolo/captoolkit)):
 
     merge.py 
     split.py
